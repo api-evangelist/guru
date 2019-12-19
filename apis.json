@@ -1,0 +1,52 @@
+{
+    "name": "Guru",
+    "description": "<p>Guru is reinventing the way your team captures knowledge, providing access to verified information from experts on your team: where you work and when you need it most.<\/p>",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/guru-logo.png",
+    "tags": [
+        "api provider",
+        "have api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/guru\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Guru",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/api-evangelist-site\/company\/logos\/guru-logo.png",
+            "humanURL": "https:\/\/www.getguru.com\/",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/guru-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Blog",
+            "url": "https:\/\/blog.getguru.com\/"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "https:\/\/blog.getguru.com\/rss\/"
+        },
+        {
+            "type": "Documentation",
+            "url": "http:\/\/help.getguru.com\/"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.getguru.com\/pricing\/"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.getguru.com\/"
+        }
+    ]
+}
