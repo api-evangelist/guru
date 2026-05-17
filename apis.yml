@@ -44,11 +44,11 @@ apis:
     properties:
       - type: Documentation
         url: https://developer.getguru.com/docs
-      - type: API Reference
+      - type: APIReference
         url: https://developer.getguru.com/reference
       - type: Authentication
         url: https://developer.getguru.com/reference/authentication
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developer.getguru.com/docs/getting-started
 common:
   - type: Website
@@ -61,7 +61,7 @@ common:
     url: https://help.getguru.com
   - type: Pricing
     url: https://www.getguru.com/pricing
-  - type: Sign Up
+  - type: SignUp
     url: https://app.getguru.com/signup
   - type: Support
     url: https://help.getguru.com
