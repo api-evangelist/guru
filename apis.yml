@@ -51,6 +51,8 @@ apis:
       - type: GettingStarted
         url: https://developer.getguru.com/docs/getting-started
 common:
+  - type: GitHubOrganization
+    url: https://github.com/guruhq
   - type: Website
     url: https://www.getguru.com
   - type: Documentation
