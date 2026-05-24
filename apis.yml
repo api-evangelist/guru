@@ -69,6 +69,8 @@ common:
     url: https://help.getguru.com
   - type: LinkedIn
     url: https://www.linkedin.com/company/guru-technologies-inc-
+  - type: LLMsTxt
+    url: https://developer.getguru.com/llms.txt
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
