@@ -1,0 +1,1084 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List analytics events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/analytics"
+          },
+          "docs": "List analytics events"
+        },
+        {
+          "info": {
+            "name": "Get team statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/stats"
+          },
+          "docs": "Get team statistics"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Answers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ask a question and receive AI-generated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/answers/create"
+          },
+          "docs": "Ask a question and receive AI-generated answer"
+        },
+        {
+          "info": {
+            "name": "Assign answer to expert",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/answers/assign-expert"
+          },
+          "docs": "Assign answer to expert"
+        },
+        {
+          "info": {
+            "name": "Unassign answer from expert",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/answers/unassign-expert"
+          },
+          "docs": "Unassign answer from expert"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Cards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards"
+          },
+          "docs": "Get card"
+        },
+        {
+          "info": {
+            "name": "Delete card",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/cards"
+          },
+          "docs": "Delete card"
+        },
+        {
+          "info": {
+            "name": "Create card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/create"
+          },
+          "docs": "Create card"
+        },
+        {
+          "info": {
+            "name": "Update card",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/cards/update"
+          },
+          "docs": "Update card"
+        },
+        {
+          "info": {
+            "name": "Verify card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/verify"
+          },
+          "docs": "Verify card"
+        },
+        {
+          "info": {
+            "name": "Unverify card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/unverify"
+          },
+          "docs": "Unverify card"
+        },
+        {
+          "info": {
+            "name": "List unverified cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/verification"
+          },
+          "docs": "List unverified cards"
+        },
+        {
+          "info": {
+            "name": "List favorite lists containing card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/favorite-lists"
+          },
+          "docs": "List favorite lists containing card"
+        },
+        {
+          "info": {
+            "name": "List folders card is on",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/folders"
+          },
+          "docs": "List folders card is on"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CardComments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create card comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/comments/create"
+          },
+          "docs": "Create card comment"
+        },
+        {
+          "info": {
+            "name": "List card comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/comments"
+          },
+          "docs": "List card comments"
+        },
+        {
+          "info": {
+            "name": "Delete card comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/cards/comments"
+          },
+          "docs": "Delete card comment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "CardVerifiers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List card verifiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/verifiers"
+          },
+          "docs": "List card verifiers"
+        },
+        {
+          "info": {
+            "name": "Get card verifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/verifiers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get card verifier"
+        },
+        {
+          "info": {
+            "name": "Replace card verifiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/verifiers/upsert"
+          },
+          "docs": "Replace card verifiers"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/collections"
+          },
+          "docs": "List collections"
+        },
+        {
+          "info": {
+            "name": "Find collection by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/collections/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Find collection by ID"
+        },
+        {
+          "info": {
+            "name": "List collection group access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/collections/access"
+          },
+          "docs": "List collection group access"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Folders",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/folders/create"
+          },
+          "docs": "Create folder"
+        },
+        {
+          "info": {
+            "name": "List folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders"
+          },
+          "docs": "List folders"
+        },
+        {
+          "info": {
+            "name": "Delete folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/folders"
+          },
+          "docs": "Delete folder"
+        },
+        {
+          "info": {
+            "name": "Get folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get folder"
+        },
+        {
+          "info": {
+            "name": "Get folder items",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/:id/items",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get folder items"
+        },
+        {
+          "info": {
+            "name": "Get folder parent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/:id/parent",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get folder parent"
+        },
+        {
+          "info": {
+            "name": "Get folder permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/:id/permissions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get folder permissions"
+        },
+        {
+          "info": {
+            "name": "Get folder effective permissions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/:id/effective-permissions",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get folder effective permissions"
+        },
+        {
+          "info": {
+            "name": "Export folder to PDF",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/:id/pdf",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Export folder to PDF"
+        },
+        {
+          "info": {
+            "name": "Update folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/folders/update"
+          },
+          "docs": "Update folder"
+        },
+        {
+          "info": {
+            "name": "Search for folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/folders/search"
+          },
+          "docs": "Search for folders"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Announcements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/alerts/create"
+          },
+          "docs": "Create announcement"
+        },
+        {
+          "info": {
+            "name": "List announcements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts"
+          },
+          "docs": "List announcements"
+        },
+        {
+          "info": {
+            "name": "Delete announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/alerts"
+          },
+          "docs": "Delete announcement"
+        },
+        {
+          "info": {
+            "name": "Get announcement stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts/stats"
+          },
+          "docs": "Get announcement stats"
+        },
+        {
+          "info": {
+            "name": "Get announcement stats summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts/stats-summary"
+          },
+          "docs": "Get announcement stats summary"
+        },
+        {
+          "info": {
+            "name": "Get announcement user stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts/user-stats"
+          },
+          "docs": "Get announcement user stats"
+        },
+        {
+          "info": {
+            "name": "Export announcement user details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/alerts/export-users"
+          },
+          "docs": "Export announcement user details"
+        },
+        {
+          "info": {
+            "name": "Send announcement reminders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/alerts/send-reminders"
+          },
+          "docs": "Send announcement reminders"
+        },
+        {
+          "info": {
+            "name": "Mark announcement as read",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/alerts/mark-read"
+          },
+          "docs": "Mark announcement as read"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "TicketLinking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create ticket link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/kcs/create"
+          },
+          "docs": "Create ticket link"
+        },
+        {
+          "info": {
+            "name": "List ticket links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/kcs"
+          },
+          "docs": "List ticket links"
+        },
+        {
+          "info": {
+            "name": "Delete ticket link",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/kcs"
+          },
+          "docs": "Delete ticket link"
+        },
+        {
+          "info": {
+            "name": "Get enabled ticket linking platforms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/kcs/apps"
+          },
+          "docs": "Get enabled ticket linking platforms"
+        },
+        {
+          "info": {
+            "name": "Enable ticket linking platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/kcs/add-app"
+          },
+          "docs": "Enable ticket linking platform"
+        },
+        {
+          "info": {
+            "name": "Disable ticket linking platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/kcs/delete-app"
+          },
+          "docs": "Disable ticket linking platform"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/search/query"
+          },
+          "docs": "Search for cards"
+        },
+        {
+          "info": {
+            "name": "Search for cards (card manager)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/search/query-card-mgr"
+          },
+          "docs": "Search for cards (card manager)"
+        },
+        {
+          "info": {
+            "name": "Search cards using JSON query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/search/json-query"
+          },
+          "docs": "Search cards using JSON query"
+        },
+        {
+          "info": {
+            "name": "Search with sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/search/keyword-document"
+          },
+          "docs": "Search with sources"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "People",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/people/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get profile"
+        },
+        {
+          "info": {
+            "name": "Update profile",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/people/update"
+          },
+          "docs": "Update profile"
+        },
+        {
+          "info": {
+            "name": "List direct reports",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/people/direct-reports"
+          },
+          "docs": "List direct reports"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Members",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List team members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/members"
+          },
+          "docs": "List team members"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/groups"
+          },
+          "docs": "List user groups"
+        },
+        {
+          "info": {
+            "name": "List group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/groups/members"
+          },
+          "docs": "List group members"
+        },
+        {
+          "info": {
+            "name": "List group collection access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/groups/collections"
+          },
+          "docs": "List group collection access"
+        },
+        {
+          "info": {
+            "name": "Add user group member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/groups/create-member"
+          },
+          "docs": "Add user group member"
+        },
+        {
+          "info": {
+            "name": "Delete user group member",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/groups/delete-member"
+          },
+          "docs": "Delete user group member"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/teams/tags/create"
+          },
+          "docs": "Create tag"
+        },
+        {
+          "info": {
+            "name": "Get tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/tags/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get tag"
+        },
+        {
+          "info": {
+            "name": "Update tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/teams/tags/update"
+          },
+          "docs": "Update tag"
+        },
+        {
+          "info": {
+            "name": "Create tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/create"
+          },
+          "docs": "Create tag category"
+        },
+        {
+          "info": {
+            "name": "List tag categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories"
+          },
+          "docs": "List tag categories"
+        },
+        {
+          "info": {
+            "name": "Get tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get tag category"
+        },
+        {
+          "info": {
+            "name": "Update tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/update"
+          },
+          "docs": "Update tag category"
+        },
+        {
+          "info": {
+            "name": "Delete tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/delete"
+          },
+          "docs": "Delete tag category"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Templates",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create card template",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/templates/create"
+          },
+          "docs": "Create card template"
+        },
+        {
+          "info": {
+            "name": "List card templates",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/templates"
+          },
+          "docs": "List card templates"
+        },
+        {
+          "info": {
+            "name": "Get card template",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/templates/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get card template"
+        },
+        {
+          "info": {
+            "name": "Update card template",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/templates/update"
+          },
+          "docs": "Update card template"
+        },
+        {
+          "info": {
+            "name": "Delete card template",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/templates/delete"
+          },
+          "docs": "Delete card template"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get authenticated user information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/whoami"
+          },
+          "docs": "Get authenticated user information"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tasks",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user mentions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/tasks/mentions"
+          },
+          "docs": "List user mentions"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
