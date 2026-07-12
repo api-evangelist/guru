@@ -51,6 +51,10 @@ apis:
       - type: GettingStarted
         url: https://developer.getguru.com/docs/getting-started
 common:
+  - type: DomainSecurity
+    url: security/guru-domain-security.yml
+  - type: Authentication
+    url: authentication/guru-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/guruhq
   - type: Website

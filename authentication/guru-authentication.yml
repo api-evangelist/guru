@@ -1,0 +1,19 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/guru-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: API token authentication via HTTP Basic.
+  sources:
+  - openapi/guru-openapi.yml
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: OAuth 2.0 bearer token.
+  sources:
+  - openapi/guru-openapi.yml
