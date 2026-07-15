@@ -51,6 +51,8 @@ apis:
       - type: GettingStarted
         url: https://developer.getguru.com/docs/getting-started
 common:
+  - type: AgenticAccess
+    url: agentic-access/guru-agentic-access.yml
   - type: DomainSecurity
     url: security/guru-domain-security.yml
   - type: Authentication
