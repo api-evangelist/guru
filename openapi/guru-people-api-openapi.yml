@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics People API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: People
+paths:
+  /people/{id}:
+    get:
+      summary: Get profile
+      operationId: getProfile
+      tags:
+      - People
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Profile details.
+  /people/update:
+    put:
+      summary: Update profile
+      operationId: updateProfile
+      tags:
+      - People
+      responses:
+        '200':
+          description: Profile updated.
+  /people/direct-reports:
+    get:
+      summary: List direct reports
+      operationId: listDirectReports
+      tags:
+      - People
+      responses:
+        '200':
+          description: List of direct reports.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

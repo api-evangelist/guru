@@ -1,0 +1,62 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Answers API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Answers
+paths:
+  /answers/create:
+    post:
+      summary: Ask a question and receive AI-generated answer
+      operationId: createAnswer
+      tags:
+      - Answers
+      responses:
+        '200':
+          description: Answer created.
+  /answers/assign-expert:
+    put:
+      summary: Assign answer to expert
+      operationId: assignAnswerExpert
+      tags:
+      - Answers
+      responses:
+        '200':
+          description: Expert assigned.
+  /answers/unassign-expert:
+    delete:
+      summary: Unassign answer from expert
+      operationId: unassignAnswerExpert
+      tags:
+      - Answers
+      responses:
+        '204':
+          description: Expert unassigned.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

@@ -1,0 +1,169 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Folders API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Folders
+paths:
+  /folders/create:
+    post:
+      summary: Create folder
+      operationId: createFolder
+      tags:
+      - Folders
+      responses:
+        '201':
+          description: Folder created.
+  /folders:
+    get:
+      summary: List folders
+      operationId: listFolders
+      tags:
+      - Folders
+      responses:
+        '200':
+          description: List of folders.
+    delete:
+      summary: Delete folder
+      operationId: deleteFolder
+      tags:
+      - Folders
+      responses:
+        '204':
+          description: Folder deleted.
+  /folders/{id}:
+    get:
+      summary: Get folder
+      operationId: getFolder
+      tags:
+      - Folders
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Folder details.
+  /folders/{id}/items:
+    get:
+      summary: Get folder items
+      operationId: getFolderItems
+      tags:
+      - Folders
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of folder items.
+  /folders/{id}/parent:
+    get:
+      summary: Get folder parent
+      operationId: getFolderParent
+      tags:
+      - Folders
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Parent folder.
+  /folders/{id}/permissions:
+    get:
+      summary: Get folder permissions
+      operationId: getFolderPermissions
+      tags:
+      - Folders
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Folder permissions.
+  /folders/{id}/effective-permissions:
+    get:
+      summary: Get folder effective permissions
+      operationId: getFolderEffectivePermissions
+      tags:
+      - Folders
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Effective permissions.
+  /folders/{id}/pdf:
+    get:
+      summary: Export folder to PDF
+      operationId: exportFolderPdf
+      tags:
+      - Folders
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: PDF file.
+  /folders/update:
+    put:
+      summary: Update folder
+      operationId: updateFolder
+      tags:
+      - Folders
+      responses:
+        '200':
+          description: Folder updated.
+  /folders/search:
+    get:
+      summary: Search for folders
+      operationId: searchFolders
+      tags:
+      - Folders
+      responses:
+        '200':
+          description: Search results.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

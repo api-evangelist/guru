@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics CardVerifiers API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: CardVerifiers
+paths:
+  /cards/verifiers:
+    get:
+      summary: List card verifiers
+      operationId: listCardVerifiers
+      tags:
+      - CardVerifiers
+      responses:
+        '200':
+          description: List of card verifiers.
+  /cards/verifiers/{id}:
+    get:
+      summary: Get card verifier
+      operationId: getCardVerifier
+      tags:
+      - CardVerifiers
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Card verifier details.
+  /cards/verifiers/upsert:
+    post:
+      summary: Replace card verifiers
+      operationId: upsertCardVerifiers
+      tags:
+      - CardVerifiers
+      responses:
+        '200':
+          description: Card verifiers replaced.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

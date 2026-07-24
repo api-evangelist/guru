@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Groups API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Groups
+paths:
+  /groups:
+    get:
+      summary: List user groups
+      operationId: listGroups
+      tags:
+      - Groups
+      responses:
+        '200':
+          description: List of groups.
+  /groups/members:
+    get:
+      summary: List group members
+      operationId: listGroupMembers
+      tags:
+      - Groups
+      responses:
+        '200':
+          description: List of group members.
+  /groups/collections:
+    get:
+      summary: List group collection access
+      operationId: listGroupCollections
+      tags:
+      - Groups
+      responses:
+        '200':
+          description: List of collections.
+  /groups/create-member:
+    post:
+      summary: Add user group member
+      operationId: createGroupMember
+      tags:
+      - Groups
+      responses:
+        '201':
+          description: Member added.
+  /groups/delete-member:
+    delete:
+      summary: Delete user group member
+      operationId: deleteGroupMember
+      tags:
+      - Groups
+      responses:
+        '204':
+          description: Member removed.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

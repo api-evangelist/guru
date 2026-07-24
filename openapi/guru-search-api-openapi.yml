@@ -1,0 +1,71 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Search API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Search
+paths:
+  /search/query:
+    get:
+      summary: Search for cards
+      operationId: searchCards
+      tags:
+      - Search
+      responses:
+        '200':
+          description: Search results.
+  /search/query-card-mgr:
+    get:
+      summary: Search for cards (card manager)
+      operationId: searchCardsManager
+      tags:
+      - Search
+      responses:
+        '200':
+          description: Search results.
+  /search/json-query:
+    post:
+      summary: Search cards using JSON query
+      operationId: searchCardsJson
+      tags:
+      - Search
+      responses:
+        '200':
+          description: Search results.
+  /search/keyword-document:
+    post:
+      summary: Search with sources
+      operationId: searchKeywordDocument
+      tags:
+      - Search
+      responses:
+        '200':
+          description: Search results.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

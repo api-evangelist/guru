@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Cards API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Cards
+paths:
+  /cards:
+    get:
+      summary: Get card
+      operationId: getCard
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: Card details.
+    delete:
+      summary: Delete card
+      operationId: deleteCard
+      tags:
+      - Cards
+      responses:
+        '204':
+          description: Card deleted.
+  /cards/create:
+    post:
+      summary: Create card
+      operationId: createCard
+      tags:
+      - Cards
+      responses:
+        '201':
+          description: Card created.
+  /cards/update:
+    put:
+      summary: Update card
+      operationId: updateCard
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: Card updated.
+  /cards/verify:
+    post:
+      summary: Verify card
+      operationId: verifyCard
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: Card verified.
+  /cards/unverify:
+    post:
+      summary: Unverify card
+      operationId: unverifyCard
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: Card unverified.
+  /cards/verification:
+    get:
+      summary: List unverified cards
+      operationId: listUnverifiedCards
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: List of unverified cards.
+  /cards/favorite-lists:
+    get:
+      summary: List favorite lists containing card
+      operationId: listCardFavoriteLists
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: List of favorite lists.
+  /cards/folders:
+    get:
+      summary: List folders card is on
+      operationId: listCardFolders
+      tags:
+      - Cards
+      responses:
+        '200':
+          description: List of folders.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

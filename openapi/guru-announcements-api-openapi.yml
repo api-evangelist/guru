@@ -1,0 +1,115 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Announcements API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Announcements
+paths:
+  /alerts/create:
+    post:
+      summary: Create announcement
+      operationId: createAnnouncement
+      tags:
+      - Announcements
+      responses:
+        '201':
+          description: Announcement created.
+  /alerts:
+    get:
+      summary: List announcements
+      operationId: listAnnouncements
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: List of announcements.
+    delete:
+      summary: Delete announcement
+      operationId: deleteAnnouncement
+      tags:
+      - Announcements
+      responses:
+        '204':
+          description: Announcement deleted.
+  /alerts/stats:
+    get:
+      summary: Get announcement stats
+      operationId: getAnnouncementStats
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: Announcement stats.
+  /alerts/stats-summary:
+    get:
+      summary: Get announcement stats summary
+      operationId: getAnnouncementStatsSummary
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: Announcement stats summary.
+  /alerts/user-stats:
+    get:
+      summary: Get announcement user stats
+      operationId: getAnnouncementUserStats
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: Announcement user stats.
+  /alerts/export-users:
+    post:
+      summary: Export announcement user details
+      operationId: exportAnnouncementUsers
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: Export started.
+  /alerts/send-reminders:
+    post:
+      summary: Send announcement reminders
+      operationId: sendAnnouncementReminders
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: Reminders sent.
+  /alerts/mark-read:
+    put:
+      summary: Mark announcement as read
+      operationId: markAnnouncementRead
+      tags:
+      - Announcements
+      responses:
+        '200':
+          description: Announcement marked as read.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

@@ -1,0 +1,86 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Templates API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Templates
+paths:
+  /templates/create:
+    post:
+      summary: Create card template
+      operationId: createTemplate
+      tags:
+      - Templates
+      responses:
+        '201':
+          description: Template created.
+  /templates:
+    get:
+      summary: List card templates
+      operationId: listTemplates
+      tags:
+      - Templates
+      responses:
+        '200':
+          description: List of templates.
+  /templates/{id}:
+    get:
+      summary: Get card template
+      operationId: getTemplate
+      tags:
+      - Templates
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Template details.
+  /templates/update:
+    put:
+      summary: Update card template
+      operationId: updateTemplate
+      tags:
+      - Templates
+      responses:
+        '200':
+          description: Template updated.
+  /templates/delete:
+    delete:
+      summary: Delete card template
+      operationId: deleteTemplate
+      tags:
+      - Templates
+      responses:
+        '204':
+          description: Template deleted.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.

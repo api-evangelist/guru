@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Guru Analytics Collections API
+  version: 1.0.0
+  description: 'REST API for accessing and managing Guru data programmatically. Supports
+
+    cards, collections, folders, announcements, search, people, groups, tags,
+
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+
+    (recommended) or API tokens.
+
+    '
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+- url: https://api.getguru.com/api/v1
+  description: Guru production API
+security:
+- basicAuth: []
+- bearerAuth: []
+tags:
+- name: Collections
+paths:
+  /collections:
+    get:
+      summary: List collections
+      operationId: listCollections
+      tags:
+      - Collections
+      responses:
+        '200':
+          description: List of collections.
+  /collections/{id}:
+    get:
+      summary: Find collection by ID
+      operationId: getCollection
+      tags:
+      - Collections
+      parameters:
+      - in: path
+        name: id
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Collection details.
+  /collections/access:
+    get:
+      summary: List collection group access
+      operationId: listCollectionAccess
+      tags:
+      - Collections
+      responses:
+        '200':
+          description: List of group access entries.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.
