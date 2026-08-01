@@ -1,0 +1,730 @@
+openapi: 3.1.0
+info:
+  title: Guru API
+  version: 1.0.0
+  description: |
+    REST API for accessing and managing Guru data programmatically. Supports
+    cards, collections, folders, announcements, search, people, groups, tags,
+    templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
+    (recommended) or API tokens.
+  contact:
+    name: Guru Developer Network
+    url: https://developer.getguru.com
+servers:
+  - url: https://api.getguru.com/api/v1
+    description: Guru production API
+security:
+  - basicAuth: []
+  - bearerAuth: []
+tags:
+  - name: Analytics
+  - name: Answers
+  - name: Cards
+  - name: CardComments
+  - name: CardVerifiers
+  - name: Collections
+  - name: Folders
+  - name: Announcements
+  - name: TicketLinking
+  - name: Search
+  - name: People
+  - name: Members
+  - name: Groups
+  - name: Tags
+  - name: Templates
+  - name: User
+  - name: Tasks
+paths:
+  /teams/analytics:
+    get:
+      summary: List analytics events
+      operationId: listAnalyticsEvents
+      tags: [Analytics]
+      responses:
+        "200":
+          description: List of analytics events.
+  /teams/stats:
+    get:
+      summary: Get team statistics
+      operationId: getTeamStats
+      tags: [Analytics]
+      responses:
+        "200":
+          description: Team statistics.
+  /answers/create:
+    post:
+      summary: Ask a question and receive AI-generated answer
+      operationId: createAnswer
+      tags: [Answers]
+      responses:
+        "200":
+          description: Answer created.
+  /answers/assign-expert:
+    put:
+      summary: Assign answer to expert
+      operationId: assignAnswerExpert
+      tags: [Answers]
+      responses:
+        "200":
+          description: Expert assigned.
+  /answers/unassign-expert:
+    delete:
+      summary: Unassign answer from expert
+      operationId: unassignAnswerExpert
+      tags: [Answers]
+      responses:
+        "204":
+          description: Expert unassigned.
+  /cards:
+    get:
+      summary: Get card
+      operationId: getCard
+      tags: [Cards]
+      responses:
+        "200":
+          description: Card details.
+    delete:
+      summary: Delete card
+      operationId: deleteCard
+      tags: [Cards]
+      responses:
+        "204":
+          description: Card deleted.
+  /cards/create:
+    post:
+      summary: Create card
+      operationId: createCard
+      tags: [Cards]
+      responses:
+        "201":
+          description: Card created.
+  /cards/update:
+    put:
+      summary: Update card
+      operationId: updateCard
+      tags: [Cards]
+      responses:
+        "200":
+          description: Card updated.
+  /cards/verify:
+    post:
+      summary: Verify card
+      operationId: verifyCard
+      tags: [Cards]
+      responses:
+        "200":
+          description: Card verified.
+  /cards/unverify:
+    post:
+      summary: Unverify card
+      operationId: unverifyCard
+      tags: [Cards]
+      responses:
+        "200":
+          description: Card unverified.
+  /cards/verification:
+    get:
+      summary: List unverified cards
+      operationId: listUnverifiedCards
+      tags: [Cards]
+      responses:
+        "200":
+          description: List of unverified cards.
+  /cards/favorite-lists:
+    get:
+      summary: List favorite lists containing card
+      operationId: listCardFavoriteLists
+      tags: [Cards]
+      responses:
+        "200":
+          description: List of favorite lists.
+  /cards/folders:
+    get:
+      summary: List folders card is on
+      operationId: listCardFolders
+      tags: [Cards]
+      responses:
+        "200":
+          description: List of folders.
+  /cards/comments/create:
+    post:
+      summary: Create card comment
+      operationId: createCardComment
+      tags: [CardComments]
+      responses:
+        "201":
+          description: Comment created.
+  /cards/comments:
+    get:
+      summary: List card comments
+      operationId: listCardComments
+      tags: [CardComments]
+      responses:
+        "200":
+          description: List of comments.
+    delete:
+      summary: Delete card comment
+      operationId: deleteCardComment
+      tags: [CardComments]
+      responses:
+        "204":
+          description: Comment deleted.
+  /cards/verifiers:
+    get:
+      summary: List card verifiers
+      operationId: listCardVerifiers
+      tags: [CardVerifiers]
+      responses:
+        "200":
+          description: List of card verifiers.
+  /cards/verifiers/{id}:
+    get:
+      summary: Get card verifier
+      operationId: getCardVerifier
+      tags: [CardVerifiers]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Card verifier details.
+  /cards/verifiers/upsert:
+    post:
+      summary: Replace card verifiers
+      operationId: upsertCardVerifiers
+      tags: [CardVerifiers]
+      responses:
+        "200":
+          description: Card verifiers replaced.
+  /collections:
+    get:
+      summary: List collections
+      operationId: listCollections
+      tags: [Collections]
+      responses:
+        "200":
+          description: List of collections.
+  /collections/{id}:
+    get:
+      summary: Find collection by ID
+      operationId: getCollection
+      tags: [Collections]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Collection details.
+  /collections/access:
+    get:
+      summary: List collection group access
+      operationId: listCollectionAccess
+      tags: [Collections]
+      responses:
+        "200":
+          description: List of group access entries.
+  /folders/create:
+    post:
+      summary: Create folder
+      operationId: createFolder
+      tags: [Folders]
+      responses:
+        "201":
+          description: Folder created.
+  /folders:
+    get:
+      summary: List folders
+      operationId: listFolders
+      tags: [Folders]
+      responses:
+        "200":
+          description: List of folders.
+    delete:
+      summary: Delete folder
+      operationId: deleteFolder
+      tags: [Folders]
+      responses:
+        "204":
+          description: Folder deleted.
+  /folders/{id}:
+    get:
+      summary: Get folder
+      operationId: getFolder
+      tags: [Folders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Folder details.
+  /folders/{id}/items:
+    get:
+      summary: Get folder items
+      operationId: getFolderItems
+      tags: [Folders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: List of folder items.
+  /folders/{id}/parent:
+    get:
+      summary: Get folder parent
+      operationId: getFolderParent
+      tags: [Folders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Parent folder.
+  /folders/{id}/permissions:
+    get:
+      summary: Get folder permissions
+      operationId: getFolderPermissions
+      tags: [Folders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Folder permissions.
+  /folders/{id}/effective-permissions:
+    get:
+      summary: Get folder effective permissions
+      operationId: getFolderEffectivePermissions
+      tags: [Folders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Effective permissions.
+  /folders/{id}/pdf:
+    get:
+      summary: Export folder to PDF
+      operationId: exportFolderPdf
+      tags: [Folders]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: PDF file.
+  /folders/update:
+    put:
+      summary: Update folder
+      operationId: updateFolder
+      tags: [Folders]
+      responses:
+        "200":
+          description: Folder updated.
+  /folders/search:
+    get:
+      summary: Search for folders
+      operationId: searchFolders
+      tags: [Folders]
+      responses:
+        "200":
+          description: Search results.
+  /alerts/create:
+    post:
+      summary: Create announcement
+      operationId: createAnnouncement
+      tags: [Announcements]
+      responses:
+        "201":
+          description: Announcement created.
+  /alerts:
+    get:
+      summary: List announcements
+      operationId: listAnnouncements
+      tags: [Announcements]
+      responses:
+        "200":
+          description: List of announcements.
+    delete:
+      summary: Delete announcement
+      operationId: deleteAnnouncement
+      tags: [Announcements]
+      responses:
+        "204":
+          description: Announcement deleted.
+  /alerts/stats:
+    get:
+      summary: Get announcement stats
+      operationId: getAnnouncementStats
+      tags: [Announcements]
+      responses:
+        "200":
+          description: Announcement stats.
+  /alerts/stats-summary:
+    get:
+      summary: Get announcement stats summary
+      operationId: getAnnouncementStatsSummary
+      tags: [Announcements]
+      responses:
+        "200":
+          description: Announcement stats summary.
+  /alerts/user-stats:
+    get:
+      summary: Get announcement user stats
+      operationId: getAnnouncementUserStats
+      tags: [Announcements]
+      responses:
+        "200":
+          description: Announcement user stats.
+  /alerts/export-users:
+    post:
+      summary: Export announcement user details
+      operationId: exportAnnouncementUsers
+      tags: [Announcements]
+      responses:
+        "200":
+          description: Export started.
+  /alerts/send-reminders:
+    post:
+      summary: Send announcement reminders
+      operationId: sendAnnouncementReminders
+      tags: [Announcements]
+      responses:
+        "200":
+          description: Reminders sent.
+  /alerts/mark-read:
+    put:
+      summary: Mark announcement as read
+      operationId: markAnnouncementRead
+      tags: [Announcements]
+      responses:
+        "200":
+          description: Announcement marked as read.
+  /kcs/create:
+    post:
+      summary: Create ticket link
+      operationId: createTicketLink
+      tags: [TicketLinking]
+      responses:
+        "201":
+          description: Ticket link created.
+  /kcs:
+    get:
+      summary: List ticket links
+      operationId: listTicketLinks
+      tags: [TicketLinking]
+      responses:
+        "200":
+          description: List of ticket links.
+    delete:
+      summary: Delete ticket link
+      operationId: deleteTicketLink
+      tags: [TicketLinking]
+      responses:
+        "204":
+          description: Ticket link deleted.
+  /kcs/apps:
+    get:
+      summary: Get enabled ticket linking platforms
+      operationId: listTicketApps
+      tags: [TicketLinking]
+      responses:
+        "200":
+          description: List of enabled platforms.
+  /kcs/add-app:
+    put:
+      summary: Enable ticket linking platform
+      operationId: addTicketApp
+      tags: [TicketLinking]
+      responses:
+        "200":
+          description: Platform enabled.
+  /kcs/delete-app:
+    delete:
+      summary: Disable ticket linking platform
+      operationId: deleteTicketApp
+      tags: [TicketLinking]
+      responses:
+        "204":
+          description: Platform disabled.
+  /search/query:
+    get:
+      summary: Search for cards
+      operationId: searchCards
+      tags: [Search]
+      responses:
+        "200":
+          description: Search results.
+  /search/query-card-mgr:
+    get:
+      summary: Search for cards (card manager)
+      operationId: searchCardsManager
+      tags: [Search]
+      responses:
+        "200":
+          description: Search results.
+  /search/json-query:
+    post:
+      summary: Search cards using JSON query
+      operationId: searchCardsJson
+      tags: [Search]
+      responses:
+        "200":
+          description: Search results.
+  /search/keyword-document:
+    post:
+      summary: Search with sources
+      operationId: searchKeywordDocument
+      tags: [Search]
+      responses:
+        "200":
+          description: Search results.
+  /people/{id}:
+    get:
+      summary: Get profile
+      operationId: getProfile
+      tags: [People]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Profile details.
+  /people/update:
+    put:
+      summary: Update profile
+      operationId: updateProfile
+      tags: [People]
+      responses:
+        "200":
+          description: Profile updated.
+  /people/direct-reports:
+    get:
+      summary: List direct reports
+      operationId: listDirectReports
+      tags: [People]
+      responses:
+        "200":
+          description: List of direct reports.
+  /members:
+    get:
+      summary: List team members
+      operationId: listMembers
+      tags: [Members]
+      responses:
+        "200":
+          description: List of team members.
+  /groups:
+    get:
+      summary: List user groups
+      operationId: listGroups
+      tags: [Groups]
+      responses:
+        "200":
+          description: List of groups.
+  /groups/members:
+    get:
+      summary: List group members
+      operationId: listGroupMembers
+      tags: [Groups]
+      responses:
+        "200":
+          description: List of group members.
+  /groups/collections:
+    get:
+      summary: List group collection access
+      operationId: listGroupCollections
+      tags: [Groups]
+      responses:
+        "200":
+          description: List of collections.
+  /groups/create-member:
+    post:
+      summary: Add user group member
+      operationId: createGroupMember
+      tags: [Groups]
+      responses:
+        "201":
+          description: Member added.
+  /groups/delete-member:
+    delete:
+      summary: Delete user group member
+      operationId: deleteGroupMember
+      tags: [Groups]
+      responses:
+        "204":
+          description: Member removed.
+  /teams/tags/create:
+    post:
+      summary: Create tag
+      operationId: createTag
+      tags: [Tags]
+      responses:
+        "201":
+          description: Tag created.
+  /teams/tags/{id}:
+    get:
+      summary: Get tag
+      operationId: getTag
+      tags: [Tags]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Tag details.
+  /teams/tags/update:
+    put:
+      summary: Update tag
+      operationId: updateTag
+      tags: [Tags]
+      responses:
+        "200":
+          description: Tag updated.
+  /teams/tag-categories/create:
+    post:
+      summary: Create tag category
+      operationId: createTagCategory
+      tags: [Tags]
+      responses:
+        "201":
+          description: Tag category created.
+  /teams/tag-categories:
+    get:
+      summary: List tag categories
+      operationId: listTagCategories
+      tags: [Tags]
+      responses:
+        "200":
+          description: List of tag categories.
+  /teams/tag-categories/{id}:
+    get:
+      summary: Get tag category
+      operationId: getTagCategory
+      tags: [Tags]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Tag category details.
+  /teams/tag-categories/update:
+    put:
+      summary: Update tag category
+      operationId: updateTagCategory
+      tags: [Tags]
+      responses:
+        "200":
+          description: Tag category updated.
+  /teams/tag-categories/delete:
+    delete:
+      summary: Delete tag category
+      operationId: deleteTagCategory
+      tags: [Tags]
+      responses:
+        "204":
+          description: Tag category deleted.
+  /templates/create:
+    post:
+      summary: Create card template
+      operationId: createTemplate
+      tags: [Templates]
+      responses:
+        "201":
+          description: Template created.
+  /templates:
+    get:
+      summary: List card templates
+      operationId: listTemplates
+      tags: [Templates]
+      responses:
+        "200":
+          description: List of templates.
+  /templates/{id}:
+    get:
+      summary: Get card template
+      operationId: getTemplate
+      tags: [Templates]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Template details.
+  /templates/update:
+    put:
+      summary: Update card template
+      operationId: updateTemplate
+      tags: [Templates]
+      responses:
+        "200":
+          description: Template updated.
+  /templates/delete:
+    delete:
+      summary: Delete card template
+      operationId: deleteTemplate
+      tags: [Templates]
+      responses:
+        "204":
+          description: Template deleted.
+  /whoami:
+    get:
+      summary: Get authenticated user information
+      operationId: whoami
+      tags: [User]
+      responses:
+        "200":
+          description: Authenticated user information.
+  /tasks/mentions:
+    get:
+      summary: List user mentions
+      operationId: listMentions
+      tags: [Tasks]
+      responses:
+        "200":
+          description: List of mentions.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: API token authentication via HTTP Basic.
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: OAuth 2.0 bearer token.
