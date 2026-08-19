@@ -1,0 +1,65 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics CardVerifiers API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CardVerifiers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List card verifiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/verifiers"
+          },
+          "docs": "List card verifiers"
+        },
+        {
+          "info": {
+            "name": "Get card verifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/verifiers/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get card verifier"
+        },
+        {
+          "info": {
+            "name": "Replace card verifiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/verifiers/upsert"
+          },
+          "docs": "Replace card verifiers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

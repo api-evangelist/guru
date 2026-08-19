@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Analytics",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List analytics events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/analytics"
+          },
+          "docs": "List analytics events"
+        },
+        {
+          "info": {
+            "name": "Get team statistics",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/stats"
+          },
+          "docs": "Get team statistics"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

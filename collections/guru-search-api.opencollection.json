@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics Search API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Search",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Search for cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/search/query"
+          },
+          "docs": "Search for cards"
+        },
+        {
+          "info": {
+            "name": "Search for cards (card manager)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/search/query-card-mgr"
+          },
+          "docs": "Search for cards (card manager)"
+        },
+        {
+          "info": {
+            "name": "Search cards using JSON query",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/search/json-query"
+          },
+          "docs": "Search cards using JSON query"
+        },
+        {
+          "info": {
+            "name": "Search with sources",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/search/keyword-document"
+          },
+          "docs": "Search with sources"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

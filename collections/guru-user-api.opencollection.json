@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics User API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get authenticated user information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/whoami"
+          },
+          "docs": "Get authenticated user information"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

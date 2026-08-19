@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics Answers API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Answers",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Ask a question and receive AI-generated answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/answers/create"
+          },
+          "docs": "Ask a question and receive AI-generated answer"
+        },
+        {
+          "info": {
+            "name": "Assign answer to expert",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/answers/assign-expert"
+          },
+          "docs": "Assign answer to expert"
+        },
+        {
+          "info": {
+            "name": "Unassign answer from expert",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/answers/unassign-expert"
+          },
+          "docs": "Unassign answer from expert"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics Cards API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Cards",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards"
+          },
+          "docs": "Get card"
+        },
+        {
+          "info": {
+            "name": "Delete card",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/cards"
+          },
+          "docs": "Delete card"
+        },
+        {
+          "info": {
+            "name": "Create card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/create"
+          },
+          "docs": "Create card"
+        },
+        {
+          "info": {
+            "name": "Update card",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/cards/update"
+          },
+          "docs": "Update card"
+        },
+        {
+          "info": {
+            "name": "Verify card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/verify"
+          },
+          "docs": "Verify card"
+        },
+        {
+          "info": {
+            "name": "Unverify card",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/unverify"
+          },
+          "docs": "Unverify card"
+        },
+        {
+          "info": {
+            "name": "List unverified cards",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/verification"
+          },
+          "docs": "List unverified cards"
+        },
+        {
+          "info": {
+            "name": "List favorite lists containing card",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/favorite-lists"
+          },
+          "docs": "List favorite lists containing card"
+        },
+        {
+          "info": {
+            "name": "List folders card is on",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/folders"
+          },
+          "docs": "List folders card is on"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

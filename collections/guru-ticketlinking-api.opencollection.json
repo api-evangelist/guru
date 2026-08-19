@@ -1,0 +1,91 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics TicketLinking API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "TicketLinking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create ticket link",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/kcs/create"
+          },
+          "docs": "Create ticket link"
+        },
+        {
+          "info": {
+            "name": "List ticket links",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/kcs"
+          },
+          "docs": "List ticket links"
+        },
+        {
+          "info": {
+            "name": "Delete ticket link",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/kcs"
+          },
+          "docs": "Delete ticket link"
+        },
+        {
+          "info": {
+            "name": "Get enabled ticket linking platforms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/kcs/apps"
+          },
+          "docs": "Get enabled ticket linking platforms"
+        },
+        {
+          "info": {
+            "name": "Enable ticket linking platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/kcs/add-app"
+          },
+          "docs": "Enable ticket linking platform"
+        },
+        {
+          "info": {
+            "name": "Disable ticket linking platform",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/kcs/delete-app"
+          },
+          "docs": "Disable ticket linking platform"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,124 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics Announcements API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Announcements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/alerts/create"
+          },
+          "docs": "Create announcement"
+        },
+        {
+          "info": {
+            "name": "List announcements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts"
+          },
+          "docs": "List announcements"
+        },
+        {
+          "info": {
+            "name": "Delete announcement",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/alerts"
+          },
+          "docs": "Delete announcement"
+        },
+        {
+          "info": {
+            "name": "Get announcement stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts/stats"
+          },
+          "docs": "Get announcement stats"
+        },
+        {
+          "info": {
+            "name": "Get announcement stats summary",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts/stats-summary"
+          },
+          "docs": "Get announcement stats summary"
+        },
+        {
+          "info": {
+            "name": "Get announcement user stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/alerts/user-stats"
+          },
+          "docs": "Get announcement user stats"
+        },
+        {
+          "info": {
+            "name": "Export announcement user details",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/alerts/export-users"
+          },
+          "docs": "Export announcement user details"
+        },
+        {
+          "info": {
+            "name": "Send announcement reminders",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/alerts/send-reminders"
+          },
+          "docs": "Send announcement reminders"
+        },
+        {
+          "info": {
+            "name": "Mark announcement as read",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/alerts/mark-read"
+          },
+          "docs": "Mark announcement as read"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

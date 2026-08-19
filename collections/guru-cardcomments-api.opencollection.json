@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics CardComments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CardComments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create card comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/cards/comments/create"
+          },
+          "docs": "Create card comment"
+        },
+        {
+          "info": {
+            "name": "List card comments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/cards/comments"
+          },
+          "docs": "List card comments"
+        },
+        {
+          "info": {
+            "name": "Delete card comment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/cards/comments"
+          },
+          "docs": "Delete card comment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics Tags API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tags",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/teams/tags/create"
+          },
+          "docs": "Create tag"
+        },
+        {
+          "info": {
+            "name": "Get tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/tags/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get tag"
+        },
+        {
+          "info": {
+            "name": "Update tag",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/teams/tags/update"
+          },
+          "docs": "Update tag"
+        },
+        {
+          "info": {
+            "name": "Create tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/create"
+          },
+          "docs": "Create tag category"
+        },
+        {
+          "info": {
+            "name": "List tag categories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories"
+          },
+          "docs": "List tag categories"
+        },
+        {
+          "info": {
+            "name": "Get tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get tag category"
+        },
+        {
+          "info": {
+            "name": "Update tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/update"
+          },
+          "docs": "Update tag category"
+        },
+        {
+          "info": {
+            "name": "Delete tag category",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/teams/tag-categories/delete"
+          },
+          "docs": "Delete tag category"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

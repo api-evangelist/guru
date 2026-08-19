@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Guru Analytics Groups API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List user groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/groups"
+          },
+          "docs": "List user groups"
+        },
+        {
+          "info": {
+            "name": "List group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/groups/members"
+          },
+          "docs": "List group members"
+        },
+        {
+          "info": {
+            "name": "List group collection access",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.getguru.com/api/v1/groups/collections"
+          },
+          "docs": "List group collection access"
+        },
+        {
+          "info": {
+            "name": "Add user group member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.getguru.com/api/v1/groups/create-member"
+          },
+          "docs": "Add user group member"
+        },
+        {
+          "info": {
+            "name": "Delete user group member",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.getguru.com/api/v1/groups/delete-member"
+          },
+          "docs": "Delete user group member"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
