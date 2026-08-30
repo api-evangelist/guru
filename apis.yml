@@ -69,7 +69,7 @@ apis:
   - Boards
   - User
   - Group
-  - Verification
+  - Verifications
   - Analytics
   tags_raw:
   - Cards
