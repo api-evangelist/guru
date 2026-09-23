@@ -1,31 +1,15 @@
 {
   "provider": "guru",
   "sources": [
-    "guru-analytics-api-openapi.yml",
-    "guru-announcements-api-openapi.yml",
-    "guru-answers-api-openapi.yml",
-    "guru-cardcomments-api-openapi.yml",
-    "guru-cards-api-openapi.yml",
-    "guru-cardverifiers-api-openapi.yml",
-    "guru-collections-api-openapi.yml",
-    "guru-folders-api-openapi.yml",
-    "guru-groups-api-openapi.yml",
-    "guru-members-api-openapi.yml",
-    "guru-people-api-openapi.yml",
-    "guru-search-api-openapi.yml",
-    "guru-tags-api-openapi.yml",
-    "guru-tasks-api-openapi.yml",
-    "guru-templates-api-openapi.yml",
-    "guru-ticketlinking-api-openapi.yml",
-    "guru-user-api-openapi.yml"
+    "_original/guru-openapi.yml"
   ],
   "outputs": [
     "guru-analytics-api-openapi.yml",
     "guru-announcements-api-openapi.yml",
     "guru-answers-api-openapi.yml",
     "guru-cardcomments-api-openapi.yml",
-    "guru-cards-api-openapi.yml",
     "guru-cardverifiers-api-openapi.yml",
+    "guru-cards-api-openapi.yml",
     "guru-collections-api-openapi.yml",
     "guru-folders-api-openapi.yml",
     "guru-groups-api-openapi.yml",
@@ -41,6 +25,28 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "guru-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "guru-analytics-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-announcements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-answers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-cardcomments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-cards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-cardverifiers-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-folders-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-members-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-people-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-search-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-tags-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-tasks-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-templates-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-ticketlinking-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "guru-user-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

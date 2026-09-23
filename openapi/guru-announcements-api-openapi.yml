@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Guru Analytics Announcements API
+  title: Guru Announcements API
   version: 1.0.0
   description: 'REST API for accessing and managing Guru data programmatically. Supports
 
@@ -8,9 +8,7 @@ info:
 
     templates, comments, verifiers, and answers. Authentication is via OAuth 2.0
 
-    (recommended) or API tokens.
-
-    '
+    (recommended) or API tokens.'
   contact:
     name: Guru Developer Network
     url: https://developer.getguru.com
