@@ -37,7 +37,7 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/guru.png
 tags:
-  - Knowledge-Management
+  - Knowledge Management
   - Enterprise Search
   - AI Knowledge Base
   - Internal Wiki
@@ -50,6 +50,7 @@ tags_raw:
   - Internal Wiki
   - Verified Knowledge
   - Workplace Productivity
+  - Knowledge-Management
 url: >-
   https://raw.githubusercontent.com/api-evangelist/guru/refs/heads/main/apis.yml
 created: '2026-05-11'
