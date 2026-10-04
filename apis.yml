@@ -36,6 +36,9 @@ accessModel:
   generated: '2026-09-03'
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/guru.png
+x-docs-platform: readme
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
   - Knowledge Management
   - Enterprise Search
@@ -267,6 +270,9 @@ apis:
   - type: OpenAPI
     url: openapi/guru-user-api-openapi.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/guru-capability-edges.yml
+    name: Guru Business Capability Map
   - type: AgenticAccess
     url: agentic-access/guru-agentic-access.yml
   - type: DomainSecurity
