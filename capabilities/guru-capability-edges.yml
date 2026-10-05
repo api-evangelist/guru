@@ -1,0 +1,67 @@
+slug: guru
+provider: Guru
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 5
+edges:
+- tag: Cards
+  spec_file: guru-cards-api-openapi.yml
+  capability_id: BC-830
+  capability_id_l1: BC-830
+  capability_name: Knowledge Management
+  confidence: 0.85
+  evidence: POST /cards/create createCard Create card; POST /cards/verify verifyCard Verify card; GET
+    /cards/verification listUnverifiedCards
+  reason: Cards are Guru's knowledge artefacts; operations create, update and verify knowledge content,
+    realising Knowledge Management. Evidence spans both capture (create) and curation/verification, so
+    no single L2 is clearly named.
+- tag: Tags
+  spec_file: guru-tags-api-openapi.yml
+  capability_id: BC-830.20
+  capability_id_l1: BC-830
+  capability_name: Knowledge Curation & Taxonomy Management
+  confidence: 0.75
+  evidence: POST /teams/tag-categories/create createTagCategory Create tag category; GET /teams/tag-categories
+    listTagCategories
+  reason: Tags and tag categories form the classification scheme over knowledge cards, which is knowledge
+    curation and taxonomy management.
+- tag: Announcements
+  spec_file: guru-announcements-api-openapi.yml
+  capability_id: BC-850.10
+  capability_id_l1: BC-850
+  capability_name: Internal Communications Management
+  confidence: 0.7
+  evidence: POST /alerts/create "Create announcement"; POST /alerts/send-reminders "Send announcement
+    reminders"; PUT /alerts/mark-read "Mark announcement as read"
+  reason: Despite the /alerts path, operations create announcements to employees, chase read-receipts
+    with reminders and report per-user read stats — an internal employee communications broadcast tool,
+    not monitoring alerting.
+- tag: Folders
+  spec_file: guru-folders-api-openapi.yml
+  capability_id: BC-830.20
+  capability_id_l1: BC-830
+  capability_name: Knowledge Curation & Taxonomy Management
+  confidence: 0.7
+  evidence: POST /folders/create createFolder Create folder; GET /folders/{id}/items getFolderItems Get
+    folder items; GET /folders/search searchFolders
+  reason: Folders organise and structure knowledge content within Guru, which is curation/taxonomy of
+    the knowledge base rather than generic file storage; permissions and PDF export are supporting mechanics.
+- tag: Search
+  spec_file: guru-search-api-openapi.yml
+  capability_id: BC-830
+  capability_id_l1: BC-830
+  capability_name: Knowledge Management
+  confidence: 0.7
+  evidence: GET /search/query searchCards Search for cards; POST /search/keyword-document searchKeywordDocument
+    Search with sources
+  reason: Search here retrieves knowledge cards and sources across the enterprise knowledge base, supporting
+    knowledge access/sharing. Search is often pure plumbing, so only the L1 is asserted.
