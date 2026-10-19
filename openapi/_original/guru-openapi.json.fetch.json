@@ -1,0 +1,12 @@
+{
+ "url": "https://api.getguru.com/.well-known/openapi.yaml",
+ "final": "https://api.getguru.com/.well-known/openapi.yaml",
+ "status": 200,
+ "content_type": "text/yaml;charset=iso-8859-1",
+ "bytes": 41144,
+ "sha256": "05e814e82856fef48bb29fc5329d5a1de7264bd62ed35eb330d46ec686a406ae",
+ "fetched_at": "2026-10-19",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "re-archived: the provider's current document replaced a stale archive (roadmap#793); the old files are in openapi/_superseded/2026-10-19-stale"
+}

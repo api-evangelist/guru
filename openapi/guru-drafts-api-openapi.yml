@@ -1,0 +1,278 @@
+openapi: 3.2.0
+info:
+  title: Retrieval and Storage Plugin API for Guru Drafts API
+  description: A retrieval and storage API for querying and storing documents and cards based on natural language queries and metadata
+  version: v1
+servers:
+- url: https://api.getguru.com
+tags:
+- name: Drafts
+paths:
+  /api/v1/drafts:
+    post:
+      operationId: post_createDraft
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DraftCard'
+        description: Draft information
+        required: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DraftCard'
+          description: successful operation
+        '400':
+          content: {}
+          description: Invalid/Incomplete Request
+        '401':
+          content: {}
+          description: Request was unauthorized
+        '403':
+          content: {}
+          description: Forbidden access to the associated card
+        '404':
+          content: {}
+          description: Resource could not be found
+      security:
+      - basicAuth: []
+      summary: Create a draft
+      tags:
+      - Drafts
+      x-roles:
+      - write:drafts
+      x-codegen-request-body-name: body
+components:
+  schemas:
+    UserProfile:
+      description: Specifies additional information about a Guru User
+      properties:
+        roleLevel:
+          description: The level at which the user operates in their current role
+          type: string
+        useCaseList:
+          description: Describes different ways the user intends to use Guru
+          items:
+            $ref: '#/components/schemas/UseCase'
+          type: array
+        role:
+          description: The functional role a Guru user performs on their team
+          type: string
+      type: object
+    User:
+      properties:
+        id:
+          description: The identifier of this User
+          type: string
+        userProfile:
+          $ref: '#/components/schemas/UserProfile'
+        lastName:
+          description: The user's last name
+          type: string
+        firstName:
+          description: The user's first name
+          type: string
+        profilePicUrl:
+          description: The profile picture url for the user
+          type: string
+        joinedDate:
+          format: date-time
+          type: string
+        status:
+          description: The status of a User can be ACTIVE or PENDING. The User must verify their email address to be considered ACTIVE.
+          enum:
+          - ACTIVE
+          - PENDING
+          type: string
+        email:
+          description: The user's email address
+          type: string
+      required:
+      - email
+      - firstName
+      - lastName
+      type: object
+    UseCase:
+      properties:
+        description:
+          description: A description of this use case
+          type: string
+      type: object
+    CollectionModel:
+      properties:
+        name:
+          description: Collection Name
+          type: string
+        readOnly:
+          type: boolean
+        id:
+          description: ID of the collection
+          example: 'IDs are formatted like this: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+          type: string
+        color:
+          description: A hex value for the color of the Collection
+          example: '#f44336'
+          type: string
+        deleted:
+          description: Flag for whether this Collection has been deleted
+          type: boolean
+        defaultVerifier:
+          type: string
+        syncType:
+          description: 'If this Collection has been synced, this will return the type. Types include: Zendesk, Confluence, Google Drive, and Manual.'
+          enum:
+          - ZENDESK
+          - ZENDESK_IMPORT
+          - CONFLUENCE
+          - MANUAL
+          - GOOGLE_DRIVE
+          - ZENEFITS
+          - BOX
+          - KUSTOMER
+          - DROPBOX
+          - SALESFORCE
+          - GURU
+          type: string
+        collectionType:
+          description: The type can be either INTERNAL or EXTERNAL. EXTERNAL indicates that the card is from a synced Collection.
+          enum:
+          - INTERNAL
+          - EXTERNAL
+          type: string
+        boards:
+          description: Number of boards in this Collection
+          format: int64
+          type: integer
+        dateCreated:
+          description: Date the collection was created
+          format: date-time
+          type: string
+        cards:
+          description: Number of cards in this Collection
+          format: int64
+          type: integer
+        slug:
+          description: The slug is the URL to get to this Collection
+          example: https://app.getguru.com/collections/:slug_goes_here
+          type: string
+        publicCardsEnabled:
+          type: boolean
+        collectionStats:
+          $ref: '#/components/schemas/CollectionStats'
+        syncVerificationEnabled:
+          type: boolean
+        collectionTypeDetail:
+          description: The type can be FRAMEWORK, ONBOARDING, USER or EXTERNAL.
+          enum:
+          - ONBOARDING
+          - FRAMEWORK
+          - USER
+          - EXTERNAL
+          - WELCOME
+          - ONBOARDING_UNEDITED
+          type: string
+        homeBoardSlug:
+          type: string
+        verificationInterval:
+          format: int32
+          type: integer
+        administrator:
+          type: boolean
+        lastSyncedDate:
+          description: The date that the Collection was last synced from the source
+          format: date-time
+          type: string
+        emoji:
+          type: string
+        topLevelSyncLocation:
+          description: The URL where the content of the Collection is being synced from
+          type: string
+        publicCards:
+          format: int64
+          type: integer
+        madeByGuru:
+          type: boolean
+        description:
+          description: Collection Description
+          type: string
+        tags:
+          description: Returns all Tag objects associated with this collection
+          format: int64
+          type: integer
+        token:
+          type: string
+      type: object
+    DraftCard:
+      properties:
+        id:
+          type: string
+        content:
+          type: string
+        lastModified:
+          format: date-time
+          type: string
+        version:
+          format: int32
+          type: integer
+        lastModifiedBy:
+          $ref: '#/components/schemas/User'
+        collection:
+          $ref: '#/components/schemas/CollectionModel'
+        jsonContent:
+          type: string
+        cardId:
+          type: string
+        createdBy:
+          $ref: '#/components/schemas/User'
+        contentSchemaVersion:
+          type: string
+        cardTemplateId:
+          type: string
+        saveType:
+          enum:
+          - AUTO
+          - USER
+          type: string
+        cardVersion:
+          format: int32
+          type: integer
+        user:
+          $ref: '#/components/schemas/User'
+        title:
+          type: string
+      type: object
+    CollectionStats:
+      properties:
+        stats:
+          additionalProperties:
+            $ref: '#/components/schemas/Stats'
+          description: Returns an object that includes the Collection Trust Score, and Card Count of the Collection.
+          type: object
+      type: object
+    Stats:
+      discriminator:
+        propertyName: type
+        mappings:
+          card-count: '#/components/schemas/CollectionCardCount'
+          collection-trust-score: '#/components/schemas/CollectionTrustScore'
+          team-card-count: '#/components/schemas/TeamCardCount'
+          team-trust-score: '#/components/schemas/TeamTrustScore'
+      properties:
+        type:
+          enum:
+          - team-card-count
+          - team-trust-score
+          - collection-trust-score
+          - card-count
+          type: string
+      required:
+      - type
+      type: object
+  securitySchemes:
+    basicAuth:
+      scheme: basic
+      type: http
+x-original-swagger-version: '2.0'
